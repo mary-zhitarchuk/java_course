@@ -1,4 +1,4 @@
-package main.java;
+package main.java.transfer;
 //Реализовать объект «Перевод» с полями: номер перевода, сумма, валюта, получатель, отправитель, дата перевода
 //Реализовать объект «Перевод со счета на счет»
 //Реализовать объект «Перевод с карты на карту»
@@ -11,11 +11,16 @@ import java.util.Objects;
 public class Transfer {
     public int numberOfTransfer;
     public double summOfTransfer;
-    public String currency;
+    public currencyEnum currency;
     public Recipient recipient;
     public Sender sender;
     public Date dateOfTransfer;
     public boolean fromCardToCard;
+    enum currencyEnum {
+        ДОЛЛАР,
+        РУБ,
+        ЕВРО
+    }
 
     public void doTransfer() {
         if (equals(this)) {
