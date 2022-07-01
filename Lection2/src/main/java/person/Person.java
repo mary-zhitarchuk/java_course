@@ -1,13 +1,14 @@
 package main.java.person;
 
+import java.util.Locale;
+
 public class Person {
-    public String secondName;
-    public String firstName;
-    public String lastName;
-    public String cardNumber;
-    public String accountNumber;
-    public double amountOfMoney;
-    public boolean uppercase;
+    protected String secondName;
+    protected String firstName;
+    protected String lastName;
+    protected String cardNumber;
+    protected String accountNumber;
+    protected double amountOfMoney;
 
     public Person(){
 
@@ -22,16 +23,62 @@ public class Person {
         this.amountOfMoney = amountOfMoney;
     }
 
-    @Override
-    public String toString() {
-        if(uppercase)
-        {
-            return secondName.toUpperCase() + ' ' +
-                    firstName.toUpperCase() + ' ' +
-                    lastName.toUpperCase();
-        }
-        return secondName + ' ' +
-               firstName + ' ' +
-               lastName;
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public double getAmountOfMoney() {
+        return amountOfMoney;
+    }
+
+    public void setAmountOfMoney(double amountOfMoney) {
+        this.amountOfMoney = amountOfMoney;
+    }
+
+    public String getFullNameLowerCase(){
+        return secondName.toLowerCase(Locale.ROOT) + ' ' +
+                firstName.toLowerCase(Locale.ROOT) + ' ' +
+                lastName.toLowerCase(Locale.ROOT);
+    }
+    public String getFullNameUpperCase(){
+        return secondName.toUpperCase() + ' ' +
+                firstName.toUpperCase() + ' ' +
+                lastName.toUpperCase();
     }
 }
