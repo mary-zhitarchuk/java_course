@@ -1,6 +1,8 @@
-package main.java;
+package main.java.task1;
 
-public class MasIterator implements Iterator{
+import main.java.task1.Iterator;
+
+public class MasIterator implements Iterator {
     private String[] mass;
     private int index;
 
@@ -18,11 +20,15 @@ public class MasIterator implements Iterator{
     }
 
     @Override
-    public String next() throws Exception {
-        index++;
-        if(hasNext()) {
-            return mass[index];
-        }else throw new Exception();
+    public String next(){
+        try {
+            if (hasNext()) {
+                return mass[index++];
+            }
+        }catch (Exception e){
+            e.getMessage();
+        }
+        return "No elements next";
     }
 
     @Override

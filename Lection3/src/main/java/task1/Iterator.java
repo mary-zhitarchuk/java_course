@@ -1,4 +1,4 @@
-package main.java;
+package main.java.task1;
 
 public interface Iterator<String>{
     boolean hasNext();
