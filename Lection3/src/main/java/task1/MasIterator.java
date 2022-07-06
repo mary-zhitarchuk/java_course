@@ -12,11 +12,8 @@ public class MasIterator implements Iterator {
     }
 
     @Override
-    public boolean hasNext() {
-        if(this.index < mass.length)
-            return true;
-        else
-            return false;
+    public boolean hasNext(){
+        return this.index < mass.length;
     }
 
     @Override
@@ -33,6 +30,10 @@ public class MasIterator implements Iterator {
 
     @Override
     public void remove() {
-        mass[index] = null;
+        int countMoved = mass.length - index - 1;
+        if(countMoved > 0) {
+            System.arraycopy(mass, index + 1, mass, index, countMoved);
+        }
+        mass[mass.length - 1] = null;
     }
 }
