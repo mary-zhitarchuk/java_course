@@ -8,7 +8,7 @@ import java.util.Set;
 public class CountMapImpl<V> implements CountMap<V> {
     private LinkedList<V> container = new LinkedList<>();
     private LinkedList<MapElement<V>> resultMap = new LinkedList<>();
-    Map<V, Integer> map = new HashMap<>();
+    private Map<V, Integer> map = new HashMap<>();
     @Override
     public void add(V o) {
         MapElement<V> element = new MapElement<>(o);
