@@ -9,23 +9,10 @@ package main.java.task1;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException {
         Person person = new Person("Ivan", "Ivanov", "qwerty");
         Passport passport = new Passport("2323", "2424242", new Date());
         UserProfile userProfile = ObjectCreater.copyParams(person, passport, UserProfile.class);
         System.out.println(userProfile);
     }
 }
-
-
-/*
-public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-    Person person = new Person("Ivan", "Ivanov", "qwerty");
-    Passport passport = new Passport("2323", "2424242", new Date());
-    UserProfile userProfile = ObjectCreater.mergeObjects(person, passport, UserProfile.class);
-    System.out.println(userProfile)}
-
-Вывод:
-UserProfile{firstName='Ivan', lastName='Ivanov', series='2323', number='2424242'}
-
- */

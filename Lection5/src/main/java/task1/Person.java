@@ -5,6 +5,10 @@ public class Person {
     private String firstName;
     private String password;
 
+    public Person()
+    {
+
+    }
     public Person(String name, String firstName, String password) {
         this.name = name;
         this.firstName = firstName;

@@ -4,29 +4,31 @@ import java.lang.reflect.Field;
 
 public class ObjectCreater {
 
-    public static UserProfile copyParams(Person person, Passport passport, Class<UserProfile> userProfileClass){
+    public static UserProfile copyParams(Person person, Passport passport, Class<UserProfile> userProfileClass) throws IllegalAccessException, InstantiationException {
+        UserProfile userProfile = userProfileClass.newInstance();
         Field[] personParams = person.getClass().getDeclaredFields();
         Field[] passportParams = passport.getClass().getDeclaredFields();
         Field[] userProfileParams = userProfileClass.getDeclaredFields();
         try {
             for (Field fieldUser : userProfileParams) {
+                fieldUser.setAccessible(true);
                 for (Field fieldPerson : personParams) {
-                    if (fieldPerson.getName() == fieldUser.getName()) {
-                        Object value = fieldPerson.get(fieldUser.getName());
-                        fieldPerson.set(fieldUser, value);
+                    if (fieldPerson.getName().equals(fieldUser.getName())) {
+                        fieldPerson.setAccessible(true);
+                        Object value = fieldPerson.get(person);
+                        fieldUser.set(userProfile, value);
                     }
                 }
                 for (Field fieldPassport : passportParams) {
-                    if (fieldPassport == fieldUser) {
-                        Object value = fieldPassport.get(fieldUser);
-                        fieldPassport.set(fieldUser, value);
+                    if (fieldPassport.getName().equals(fieldUser.getName())) {
+                        fieldPassport.setAccessible(true);
+                        Object value = fieldPassport.get(passport);
+                        fieldUser.set(userProfile, value);
                     }
                 }
             }
-            return userProfileClass.newInstance();
+            return userProfile;
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
             e.printStackTrace();
         }
         return null;

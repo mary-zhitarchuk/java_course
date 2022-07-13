@@ -15,4 +15,14 @@ public class UserProfile {
         this.passportSeries = passportSeries;
         this.passportNumber = passportNumber;
     }
+
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", passportSeries='" + passportSeries + '\'' +
+                ", passportNumber='" + passportNumber + '\'' +
+                '}';
+    }
 }
