@@ -6,8 +6,18 @@ package main.java.task3;
     Реализовать класс Validator, который будет проверять POJO-объекты.
 */
 
-public class Main {
-    public static void main(String[] args) {
+import main.java.task3.annotations.Cat;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) throws IllegalAccessException {
+        List petOwnersNames = new ArrayList<String>();
+        petOwnersNames.add("Masha");
+        Cat cat = new Cat(11, "Бася", petOwnersNames);
+        Validator validator = new Validator(cat);
+        validator.validationCat();
     }
 }
