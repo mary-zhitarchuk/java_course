@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 
 public class Validator {
     
-    public void validationCat(Object o) throws IllegalAccessException {
+    public static void validation(Object o) throws IllegalAccessException {
         Class<?> clazz = o.getClass();
         for(Field field : clazz.getDeclaredFields()){
             field.setAccessible(true);

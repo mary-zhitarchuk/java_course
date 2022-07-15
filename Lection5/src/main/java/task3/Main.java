@@ -18,6 +18,6 @@ public class Main {
         petOwnersNames.add("Masha");
         Cat cat = new Cat(11, "Бася", petOwnersNames);
         Validator validator = new Validator();
-        validator.validationCat(cat);
+        validator.validation(cat);
     }
 }
