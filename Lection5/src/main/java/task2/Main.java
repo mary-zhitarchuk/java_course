@@ -18,7 +18,6 @@ public class Main {
                 ClassLoader.getSystemClassLoader(), new Class[]{Map.class},
                 new MyInvocationHandler(new HashMap<Integer,Integer>())
         );
-        MyInvocationHandler myInvocationHandler = new MyInvocationHandler(new HashMap<Integer,Integer>());
         map.put(1,1);
     }
 }

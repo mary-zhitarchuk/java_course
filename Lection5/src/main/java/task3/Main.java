@@ -17,7 +17,7 @@ public class Main {
         List petOwnersNames = new ArrayList<String>();
         petOwnersNames.add("Masha");
         Cat cat = new Cat(11, "Бася", petOwnersNames);
-        Validator validator = new Validator(cat);
-        validator.validationCat();
+        Validator validator = new Validator();
+        validator.validationCat(cat);
     }
 }
