@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="terminal.services.FroadMonitorTest" duration-ms="0" started-at="2022-08-08T16:21:10Z" finished-at="2022-08-08T16:21:10Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="0" started-at="2022-08-08T16:21:10Z" finished-at="2022-08-08T16:21:10Z">
+    </test> <!-- Command line test -->
+  </suite> <!-- terminal.services.FroadMonitorTest -->
+</testng-results>
