@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) throws AccountIsLockedException {
         List<Account> account1 = new ArrayList<>();
         account1.add(new Account("2365 5677 2343 4344", "1234"));
@@ -87,7 +88,7 @@ public class Main {
                                 chosenAccount.getCountOfMoney() + "\nСредств на счету зачисления: " +
                                 accountReceive.getCountOfMoney());
                         break;
-                    } catch (NotCcorrectAmountException | NotEnoughMoneyOnAccountException e) {
+                    } catch (NotEnoughMoneyOnAccountException | NotCcorrectAmountException e) {
                         System.err.println(e.getMessage());
                     }
                     break;
